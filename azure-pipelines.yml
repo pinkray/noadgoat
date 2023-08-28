@@ -1,11 +1,5 @@
 # Starter pipeline
-- task: synopsys-coverity@1
-  inputs:
-    coverityService: 'coverity_connect_server'
-    projectName: 'pinkray_101'
-    streamName: 'pinkray_101_stream_1'
-    coverityBuildDirectory: '$(Build.Repository.LocalPath)'
-    buildCommand: 'mvn -DskipTests=true'
+
 
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
@@ -25,3 +19,10 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: synopsys-coverity@1
+  inputs:
+    coverityService: 'coverity_connect_server'
+    projectName: 'pinkray_101'
+    streamName: 'pinkray_101_stream_1'
+    coverityBuildDirectory: '$(Build.Repository.LocalPath)'
+    buildCommand: 'mvn -DskipTests=true'
