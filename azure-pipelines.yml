@@ -12,19 +12,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+
 - script: |
   cd $(Agent.BuildDirectory)
   curl -s -L --user admin:$(COVERITY_AUTHKEY) -o license.dat $(COVERITY_URL)/downloadFile.htm?fn=license.dat
   curl -s -L --user admin:$(COVERITY_AUTHKEY) $(COVERITY_URL)/downloadFile.htm?fn=cov-analysis-linux64-2020.06.tar.gz | tar -xvzf -
   mv cov-analysis-linux64-2020.06 cov-analysis
   cp license.dat ./cov-analysis/bin
-  displayName: 'Install Coverity'
+ displayName: 'Install Coverity'
 
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 - task: synopsys-coverity@1
   inputs:
     coverityService: 'coverity_connect_server'
