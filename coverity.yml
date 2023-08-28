@@ -1,10 +1,10 @@
 name: $(Date:yyyyMMdd).$(Rev:.r)
 variables:
-  cov.authkey: 'c:/tools/coverity/analysis/commit-authkey'
-  cov.bin: 'c:/tools/coverity/analysis/2019.03/bin'
-  cov.host: 'localhost'
-  cov.idir: '$(Build.SourcesDirectory)/idir'
-  cov.stream: 'hello-java'
+  cov.authkey:'c:/tools/coverity/analysis/commit-authkey'
+  cov.bin:'c:/tools/coverity/analysis/2019.03/bin'
+  cov.host:'localhost'
+  cov.idir:'$(Build.SourcesDirectory)/idir'
+  cov.stream:'hello-java'
 jobs:
 - job: Coverity
   pool:
