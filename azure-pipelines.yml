@@ -19,7 +19,8 @@ steps:
   curl -s -L --user admin:$(COVERITY_AUTHKEY) $(COVERITY_URL)/downloadFile.htm?fn=cov-analysis-linux64-2020.06.tar.gz | tar -xvzf -
   mv cov-analysis-linux64-2020.06 cov-analysis
   cp license.dat ./cov-analysis/bin
- displayName: 'Install Coverity'
+  displayName: 'Install Coverity'
+
 
 - task: synopsys-coverity@1
   inputs:
