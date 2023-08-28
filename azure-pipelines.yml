@@ -6,13 +6,7 @@
     streamName: 'pinkray_101_stream_1'
     coverityBuildDirectory: '$(Build.Repository.LocalPath)'
     buildCommand: 'mvn -DskipTests=true'
-- task: synopsys-coverity@1
-  inputs:
-    coverityService: 'coverity_connect_server'
-    projectName: 'pinkray_101'
-    streamName: 'pinkray_101_stream_1'
-    coverityBuildDirectory: '$(Build.Repository.LocalPath)'
-    buildCommand: '''mvn -DskipTests=true package'''
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
